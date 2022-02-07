@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "iranyekanwebbold";
+  src: local("iranyekanwebbold"),
+    url(./assets/fonts/iranyekanwebbold.woff) format("woff");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "iranyekan";
+  src: local("iranyekanwebregular"),
+    url(./assets/fonts/iranyekanwebregular.woff) format("woff");
+  font-weight: 400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: iranyekan;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
