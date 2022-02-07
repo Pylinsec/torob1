@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3ab329d8.css",
+    "main.js": "/static/js/main.8de53e6c.js",
+    "static/media/iranyekanwebregular.woff": "/static/media/iranyekanwebregular.8504883522cc498c424c.woff",
+    "static/media/iranyekanwebbold.woff": "/static/media/iranyekanwebbold.b163d295bd96f0917484.woff",
+    "static/media/torob_logo.svg": "/static/media/torob_logo.7a3fc7400bf4aa5d17a65dd7a3850b00.svg",
+    "static/media/search.svg": "/static/media/search.d548242afb4e957b118c8b851979b280.svg",
+    "index.html": "/index.html",
+    "static/media/close.svg": "/static/media/close.aba5a0dcfb9d9de91919ce9c47730e77.svg",
+    "main.3ab329d8.css.map": "/static/css/main.3ab329d8.css.map",
+    "main.8de53e6c.js.map": "/static/js/main.8de53e6c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3ab329d8.css",
+    "static/js/main.8de53e6c.js"
+  ]
+}
