@@ -1,8 +1,12 @@
+//react import
 import React from "react";
+//svg files
 import close from "./../../assets/svg/close.svg";
+
+//function
 export default function Login({ closeLogin }) {
   return (
-    <main className="bg-[#FFF] absolute  right-1/3 flex  z-100">
+    <main className="bg-[#FFF] absolute top-[80px]  flex  z-50 opacity-100">
       <div className="w-[400px] h-[300px] bg-[#FFFFFF] ">
         <section onClick={() => closeLogin(false)} className="cursor-pointer">
           <img className="mt-[5px]" src={close} alt="closeicon" />

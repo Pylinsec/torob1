@@ -1,41 +1,47 @@
-import * as React from "react";
-import { Routes, Route, Link } from "react-router-dom";
+//react import
+import React from "react";
+//css files
 import "./home.css";
 import "./homeitem.css";
-import torob_logo from "./../../assets/svg/torob_logo.svg";
+
+//svg files
 import search from "./../../assets/svg/search.svg";
-import Login from "../login/login";
+import torob_logo from "./../../assets/svg/torob_logo.svg";
+// usestates
 import { useState } from "react";
-import Appliance from "../appliance/appliance";
+
+//components
 import Baby from "../baby/baby";
-import Clothing from "../clothiong/clothing";
+import Login from "../login/login";
+import Sport from "../sport/sport";
+import Media from "../media/media";
+import Mobile from "../mobile/mobile";
+import Health from "../health/health";
+import Others from "../others/others";
+import Vihicle from "../vihicle/vihicle";
+import Medical from "../medical/medical";
 import Computer from "../computer/computer";
 import Cultural from "../cultural/cultural";
-import Health from "../health/health";
+import Clothing from "../clothiong/clothing";
+import Appliance from "../appliance/appliance";
 import Hypermarket from "../hypermarket/hypermarket";
-import Media from "../media/media";
-import Medical from "../medical/medical";
-import Mobile from "../mobile/mobile";
-import Sport from "../sport/sport";
-import Vihicle from "../vihicle/vihicle";
-import Others from "../others/others";
 
 function Home() {
-  const [appliance, setOpenAppliance] = useState(false);
   const [baby, setOpenBaby] = useState(false);
+  const [media, setOpenMedia] = useState(false);
+  const [sport, setOpenSport] = useState(false);
+  const [login, setOpenLogin] = useState(false);
+  const [health, setOpenHealth] = useState(false);
+  const [mobile, setOpenMobile] = useState(false);
+  const [others, setOpenOthers] = useState(false);
+  const [medical, setOpenMedical] = useState(false);
+  const [vihicle, setOpenVihicle] = useState(false);
   const [clothing, setOpenClothing] = useState(false);
   const [computer, setOpenComputer] = useState(false);
   const [cultural, setOpenCultural] = useState(false);
-  const [health, setOpenHealth] = useState(false);
+  const [appliance, setOpenAppliance] = useState(false);
   const [hypermarket, setOpenHypermarket] = useState(false);
-  const [media, setOpenMedia] = useState(false);
-  const [medical, setOpenMedical] = useState(false);
-  const [mobile, setOpenMobile] = useState(false);
-  const [sport, setOpenSport] = useState(false);
-  const [vihicle, setOpenVihicle] = useState(false);
-  const [others, setOpenOthers] = useState(false);
-  const [login, setOpenLogin] = useState(false);
-  // const [openModal, setOpenModal] = useState(false);
+
   const header_json = [
     {
       title: "موبایل وتبلت",
@@ -83,7 +89,7 @@ function Home() {
     {
       title: "صوتی و تصویری",
       class: "media_div",
-      modalFunc: Mobile,
+      modalFunc: Media,
       openModal: media,
       setOpenModal: setOpenMedia,
     },
@@ -131,8 +137,18 @@ function Home() {
     },
   ];
   return (
-    <div className="home_container  h-auto w-auto ">
-      <header className="home_header bg-[#f9fafb] ">
+    <div className="relative  w-screen h-screen z-0">
+      {/* ---------------------------modal login -------------------------------------------------- */}
+
+      <div className="absolute z-50">
+        {login && (
+          <div className=" bg-black opacity-80 w-screen h-screen flex justify-center items-center ">
+            <Login closeLogin={setOpenLogin} />
+          </div>
+        )}
+      </div>
+      {/* ---------------------------modal login -------------------------------------------------- */}
+      <header className=" home_header bg-[#f9fafb] z-10">
         <div className="home_header_item_out">
           {header_json.map((item) => (
             <div onClick={() => item.setOpenModal((prevValue) => !prevValue)}>
@@ -151,15 +167,13 @@ function Home() {
           >
             ورود / ثبت نام
           </button>
-          <div className=" flex  z-10 bg-[black]">
-            {login && <Login closeLogin={setOpenLogin} />}
-          </div>
         </section>
       </header>
-      <main className="home_main  relative top-[200px]  mt-[50px] flex flex-col items-center justify-center ">
-        <div className="  h-[230px] relative top-[-160px] flex flex-col items-center justify-center ">
+
+      <main className=" home_main  w-full  relative  top-[300px] z-10">
+        <div className="  flex flex-col items-center justify-center">
           <section className="flex justify-start flex-row-reverse mt-[15px] mb-[24px]">
-            <div className="w-[85px] h-[85px] mt-[9px] ml-[12px] ">
+            <div className="w-[85px] h-[85px] mt-[9px] ml-[12px] z-10 ">
               <a href="/">
                 <img src={torob_logo} />
               </a>
@@ -180,7 +194,7 @@ function Home() {
                 <img src={search} className="h-[20px] w-[20px] " />
               </div>
               <input
-                className="  text-[16px] w-full h-full w-[478px] h-[46px] py-[1px] pl-[10px] text-right 
+                className="  text-[16px] w-[478px] h-[46px] py-[1px] px-[10px] text-right 
                 
                   focus:outline-none focus:border-none  "
                 placeholder="نام کالا را وارد کنید"
@@ -200,42 +214,32 @@ function Home() {
           </section>
         </div>
       </main>
-      <footer className=" home_footer   jsx-234733792 footer-home  ">
+      <footer className=" home_footer jsx-234733792 w-full h-[76px] fixed bottom-0 z-10 ">
         <div className="jsx-234733792 footer_row ">
-          <a className="jsx-234733792  " href="/pages/safe-shopping-guide/">
+          <a className="jsx-234733792  " href="">
             راهنمای خرید امن
           </a>
-          <a className="jsx-234733792 " href="/feedback/complaints/1/">
+          <a className="jsx-234733792 " href="">
             پیگیری سفارش
           </a>
-          <a className="jsx-234733792 " href="/pages/contact-us/">
+          <a className="jsx-234733792 " href="">
             تماس با ما
           </a>
-          <a className="jsx-234733792 " href="/pages/about-us/">
+          <a className="jsx-234733792 " href="">
             درباره ترب
           </a>
         </div>
         <div className="jsx-234733792  footer-row float-left">
-          <a className="jsx-234733792 " href="/shop-list/">
+          <a className="jsx-234733792 " href="">
             لیست فروشگاه‌ها
           </a>
-          <a
-            rel="noopener noreferrer nofollow"
-            href="https://panel.torob.com/"
-            target="_blank"
-            className="jsx-234733792 "
-          >
+          <a rel="" href="" target="_blank" className="jsx-234733792 ">
             ثبت‌نام‌ فروشگاه‌ها
           </a>
-          <a
-            rel="noopener noreferrer nofollow"
-            href="https://panel.torob.com/"
-            target="_blank"
-            className="jsx-234733792 "
-          >
+          <a rel="" href="" target="_blank" className="jsx-234733792 ">
             پنل فروشگاه‌ها
           </a>
-          <a className="jsx-234733792 " href="/pages/careers/">
+          <a className="jsx-234733792 " href="">
             فرصت‌های شغلی
           </a>
         </div>
