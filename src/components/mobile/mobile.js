@@ -1,9 +1,20 @@
 import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
 import "./mobile.css";
-export default function Mobile() {
+export default function Mobile(closeModal) {
+  const handeleModalFalse = () => {
+    closeModal(false);
+  };
+  const handleModalTrue = () => {
+    closeModal(true);
+  };
+
   return (
-    <div className="mobile_container w-9/10 h-[3200px] bg-[#f9fafb] z-20 absolute inset-x-[40px] top-[100px] ">
+    <div
+      tabIndex={0}
+      onBlur={handeleModalFalse}
+      onClick={handleModalTrue}
+      className="mobile_container w-9/10  bg-[#f9fafb] z-20 absolute inset-x-[40px] top-[100px] "
+    >
       <div>
         <a className="" href="#####">
           <div className="hover:text-[#d73948]  text-[14px] text-[#333333] px-[24px] py-[16px] leading-[24px] ">

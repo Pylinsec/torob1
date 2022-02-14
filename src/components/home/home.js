@@ -138,7 +138,7 @@ function Home() {
   ];
   return (
     <div className="relative  w-screen h-screen z-0">
-      {/* ---------------------------modal login -------------------------------------------------- */}
+      {/* --------------------------- first modal login -------------------------------------------------- */}
 
       <div className="absolute z-50">
         {login && (
@@ -147,7 +147,7 @@ function Home() {
           </div>
         )}
       </div>
-      {/* ---------------------------modal login -------------------------------------------------- */}
+      {/* ---------------------------end modal login -------------------------------------------------- */}
       <header className=" home_header bg-[#f9fafb] z-10">
         <div className="home_header_item_out">
           {header_json.map((item) => (
@@ -155,7 +155,9 @@ function Home() {
               <a className={item.class}>
                 <span>{item.title}</span>
               </a>
-              {item.openModal && <item.modalFunc />}
+              {item.openModal && (
+                <item.modalFunc closeModal={item.setOpenModal} />
+              )}
             </div>
           ))}
         </div>

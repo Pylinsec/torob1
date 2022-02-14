@@ -5,12 +5,24 @@ import close from "./../../assets/svg/close.svg";
 
 //function
 export default function Login({ closeLogin }) {
+  const handelModalFalse = () => {
+    closeLogin(false);
+  };
   return (
-    <main className="bg-[#FFF] absolute top-[80px]  flex  z-50 opacity-100">
+    <main
+      tabIndex={0}
+      onBlur={handelModalFalse}
+      className="bg-[#FFF] absolute top-[80px]  flex  z-50 opacity-100"
+    >
       <div className="w-[400px] h-[300px] bg-[#FFFFFF] ">
-        <section onClick={() => closeLogin(false)} className="cursor-pointer">
-          <img className="mt-[5px]" src={close} alt="closeicon" />
-        </section>
+        <span className="">
+          <img
+            onClick={() => closeLogin(false)}
+            className=" cursor-pointer mt-[5px]"
+            src={close}
+            alt="closeicon"
+          />
+        </span>
         <section className=" text-center">
           <hr className="my-[10px]" />
           <div className="text-center text-[14px] relative top-[-25px] ">
